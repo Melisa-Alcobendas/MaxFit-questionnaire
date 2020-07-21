@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MaxFit</title>
+  <link rel="icon" href="favicon.ico">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya:wght@400;500;800&display=swap" rel="stylesheet">
+
+  <!-- CSS stylesheet -->
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link rel="stylesheet" href="CSS/style.css">
+
+
+  <!-- Bootstrap Scripts -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
+
+</head>
+
+
+<body>
+
+  <!-- title -->
+
+  <div class="container-fluid">
+
+    <div class="top-logo">
+      <div class="row">
+        <div class="col col-3 col-md-4 col-sm-12">
+          <img class="logoDebby" src="Images/MaxFit.png" alt="LogoMaxFit">
+        </div>
+        <div class="title">
+          <h1 class="col col-9 col-md-8 col-sm-12">Cuestionario de Asesoramiento a Distancia.</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- questionnaire -->
+
+
+  <form action="mailto:maxfitdo@gmail.com?subject=Cuestionario para iniciar actividad" method="POST" enctype="text/plain">
+    <div class="personal-information container">
+      <h3>Información personal</h3>
+      <div class="form-group">
+
+        <input type="text" id="name" class="form-control" placeholder="Nombre Completo" name="Nombre" required>
+      </div>
+      <div class="form-group row">
+        <label for="age" class="col col-md-3">Edad</label>
+        <input type="number" id="age" class="form-control col col-md-4" min="0" max="100" name="Edad" required> 
+      </div>
+      <div class="form-group row">
+        <label for="birth" class="col col-md-3">Fecha de nacimiento:</label>
+        <input type="date" id="birth" class="form-control col col-md-4" name="Fecha de nacimiento" required>
+      </div>
+      <div class="form-group row">
+        <label for="sex" class="col col-md-3">Sexo:</label>
+        <select name="Sexo" id="sex" class="form-control col col-md-4" required>
+          <option value=""></option>
+          <option selected>Elegir</option>
+          <option value="M">Masculino</option>
+          <option value="F">Femenino</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="employment">Ocupación:</label>
+        <input type="text" id="employment" class="form-control" name="Ocupacion">
+      </div>
+      <div class="form-group">
+        <label for="phone-number">Número de teléfono:</label>
+        <input type="tel" id="phone-number" aria-describedby="phone-help" class="form-control" name="Numero de telefono">
+        <small id="phone-help" class="form-text text-muted">No compartiré tu número con nadie</small>
+
+      </div>
+      <div class="form-group">
+        <label for="e-mail">E-mail:</label>
+        <input type="email" id="e-mail" aria-describedby="email-help" class="form-control" name="E-mail">
+        <small id="email-help" class="form-text text-muted">No compartiré tu E-mail con nadie</small>
+
+      </div>
+
+      <br>
+
+      <p>¿Tiene alguna patología asociada a la alimentación?</p>
+      <div class="form-check form-check-inline">
+        <label class="form-check-label" for="yes">Sí</label>
+        <input class="form-check-input" type="radio" id="yes" name="Problemas alimenticios" value="Si">
+        <label class="form-check-label" for="no">No</label>
+        <input class="form-check-input" type="radio" id="no" name="Problemas alimenticios" value="No">
+      </div>
+      <p>En caso de ser postivo. Explaye su respuesta:</p>
+      <textarea name="Respuesta a problemas alimenticios" id="" cols="50" rows="5"></textarea>
+
+      <br><br>
+
+      <p>Actualmente, ¿realiza alguna actividad física?</p>
+      <div class="form-check form-check-inline">
+        <label class="form-check-label" for="yes">Sí</label>
+        <input class="form-check-input" type="radio" id="yes" name="Ejercicio" value="Si">
+        <label class="form-check-label" for="no">No</label>
+        <input class="form-check-input" type="radio" id="no" name="Ejercicio" value="No">
+      </div>
+      <p>En caso de ser postivo. Explaye su respuesta:</p>
+      <textarea name="Respuesta a actividad fisica" id="" cols="50" rows="5"></textarea>
+
+
+    </div>
+
+
+
+    <div class="biometric-data container">
+      <h3>Datos biométricos</h3>
+      <div class="form-group row">
+        <label for="weight" class="col col-md-3">Peso:</label>
+        <input class="form-control col col-md-4" type="number" id="weight" min="0" name="Peso" placeholder="kg" required>
+      </div>
+      <div class="form-group row">
+        <label for="height" class=" col col-md-3">Altura:</label>
+        <input class="form-control col col-md-4" type="number" id="height" min="0" name="Altura" placeholder="cm" required>
+      </div>
+      <div class="form-group row">
+        <p class="col col-md-3">Medidas:</p>
+        <div class="col col-md-4">
+          <div class="row">
+            <label class="col col-3" for="waist">Cintura:</label>
+            <input class="form-control col-4" type="number" id="waist" min="0" placeholder="cm" name="Cintura" required>
+          </div>
+          <div class="row">
+            <label class="col col-3" for="hip">Cadera:</label>
+            <input class="form-control col-4" type="number" id="hip" min="0" placeholder="cm" name="Cadera" required>
+          </div>
+          <div class="row">
+            <label class="col col-3" for="bust">Busto:</label>
+            <input class="form-control col-4" type="number" id="bust" min="0" placeholder="cm" name="Busto" required>
+          </div>
+
+        </div>
+
+
+      </div>
+    </div>
+
+
+    <div class="aims container">
+
+      <h3>Objetivos:</h3>
+      <div class="custom-control custom-checkbox">
+        <input class="custom-control-input" type="checkbox" id="lose-weight" name="Bajar de peso">
+        <label class="custom-control-label" for="lose-weight">Bajar de peso</label>
+      </div>
+      <div class="custom-control custom-checkbox">
+        <input class="custom-control-input" type="checkbox" id="gain-weight" name="Subir de peso">
+        <label class="custom-control-label" for="gain-weight">Subir de peso</label>
+      </div>
+      <div class="custom-control custom-checkbox">
+        <input class="custom-control-input" type="checkbox" id="muscle-mass" name="Ganar masa muscular">
+        <label class="custom-control-label" for="muscle-mass">Ganar masa muscular</label>
+      </div>
+      <div class="custom-control custom-checkbox">
+        <input class="custom-control-input" type="checkbox" id="tone" name="Tonificar">
+        <label class="custom-control-label" for="tone">Tonificar</label>
+      </div>
+      <div class="custom-control custom-checkbox">
+        <input class="custom-control-input" type="checkbox" id="butt" name="Mejorar gluteos y piernas">
+        <label class="custom-control-label" for="butt">Mejorar glúteos y piernas</label>
+      </div>
+      <div class="custom-control custom-checkbox">
+        <input class="custom-control-input" type="checkbox" id="belly" name="Mejorar y marcar abdomen">
+        <label class="custom-control-label" for="belly">Mejorar y marcar abdomen</label>
+      </div>
+      <div class="custom-control custom-checkbox">
+        <input class="custom-control-input" type="checkbox" id="torso" name="Mejorar tren superior">
+        <label class="custom-control-label" for="torso">Mejorar tren superior</label>
+      </div>
+      <div class="custom-control custom-checkbox">
+        <input class="custom-control-input" type="checkbox" id="strength" name="Mejorar fuerza">
+        <label class="custom-control-label" for="strength">Mejorar fuerza</label>
+      </div>
+      <div class="custom-control custom-checkbox">
+        <input class="custom-control-input" type="checkbox" id="stress" name="Disminuir estres">
+        <label class="custom-control-label" for="stress">Disminuir estrés</label>
+      </div>
+      <div class="custom-control custom-checkbox">
+        <input class="custom-control-input" type="checkbox" id="posture" name="Mejorar postura">
+        <label class="custom-control-label" for="posture">Mejorar postura</label>
+      </div>
+    </div>
+
+
+    <div class="health container">
+      <h3>Datos de salud</h3>
+      <div class="form-check">
+        Tabaquismo
+        <div>
+          <label for="yes1">Sí</label>
+          <input type="radio" id="yes1" name="Fuma" value="Si">
+          <label for="no1">No</label>
+          <input type="radio" id="no1" name="Fuma" value="No">
+        </div>
+
+      </div>
+      <div class="form-check">
+        Problemas cardíacos
+        <div>
+          <label for="yes2">Sí</label>
+          <input type="radio" id="yes2" name="Problemas cardiacos" value="Si">
+          <label for="no2">No</label>
+          <input type="radio" id="no2" name="Problemas cardiacos" value="No">
+        </div>
+      </div>
+      <div class="form-check">
+        Hipertension
+        <div>
+          <label for="yes3">Sí</label>
+          <input type="radio" id="yes3" name="Hipertension" value="Si">
+          <label for="no3">No</label>
+          <input type="radio" id="no3" name="Hipertension" value="No">
+        </div>
+      </div>
+      <div class="form-check">
+        Hipotension
+        <div>
+          <label for="yes4">Sí</label>
+          <input type="radio" id="yes4" name="Hipotension" value="Si">
+          <label for="no4">No</label>
+          <input type="radio" id="no4" name="Hipotension" value="No">
+        </div>
+      </div>
+      <div class="form-check">
+        Problemas de articulaciones
+        <div>
+          <label for="yes5">Sí</label>
+          <input type="radio" id="yes5" name="Problemas en articulaciones" value="Si">
+          <label for="no5">No</label>
+          <input type="radio" id="no5" name="Problemas en  articulaciones" value="No">
+        </div>
+      </div>
+      <div class="form-check">
+        Lesión u operación reciente
+        <div>
+          <label for="yes6">Sí</label>
+          <input type="radio" id="yes6" name="Lesion u operaciones" value="Si">
+          <label for="no6">No</label>
+          <input type="radio" id="no6" name="Lesion u operaciones" value="No">
+        </div>
+      </div>
+      <div class="form-check">
+        Embarazo o parto reciente
+        <div>
+          <label for="yes7">Sí</label>
+          <input type="radio" id="yes7" name="Embarazo o parto" value="Si">
+          <label for="no7">No</label>
+          <input type="radio" id="no7" name="Embarazo o parto" value="No">
+        </div>
+      </div>
+      <div class="form-check">
+        Anemia
+        <div>
+          <label for="yes8">Sí</label>
+          <input type="radio" id="yes8" name="Anemia" value="Si">
+          <label for="no8">No</label>
+          <input type="radio" id="no8" name="Anemia" value="No">
+        </div>
+      </div>
+      <div class="form-check">
+        Asma
+        <div>
+          <label for="yes9">Sí</label>
+          <input type="radio" id="yes9" name="Asma" value="Si">
+          <label for="no9">No</label>
+          <input type="radio" id="no9" name="Asma" value="No">
+        </div>
+      </div>
+      <div class="form-check">
+        Bronquitis
+        <div>
+          <label for="yes10">Sí</label>
+          <input type="radio" id="yes10" name="Bronquitis" value="Si">
+          <label for="no10">No</label>
+          <input type="radio" id="no10" name="Bronquitis" value="No">
+        </div>
+      </div>
+      <div class="form-check">
+        Diabetes
+        <div>
+          <label for="yes11">Sí</label>
+          <input type="radio" id="yes11" name="Diabetes" value="Si">
+          <label for="no11">No</label>
+          <input type="radio" id="no11" name="Diabetes" value="No">
+        </div>
+      </div>
+      <div class="form-check">
+        Epilepsia
+        <div>
+          <label for="yes12">Sí</label>
+          <input type="radio" id="yes12" name="Epilaepsia" value="Si">
+          <label for="no12">No</label>
+          <input type="radio" id="no12" name="Epilepsia" value="No">
+        </div>
+      </div>
+      <div class="form-check">
+        Depresión
+        <div>
+          <label for="yes13">Sí</label>
+          <input type="radio" id="yes13" name="Depresion" value="Si">
+          <label for="no13">No</label>
+          <input type="radio" id="no13" name="Depresion" value="No">
+        </div>
+      </div>
+      <div class="form-check">
+        Obesidad
+        <div>
+          <label for="yes14">Sí</label>
+          <input type="radio" id="yes14" name="Obesidad" value="Si">
+          <label for="no14">No</label>
+          <input type="radio" id="no14" name="Obesidad" value="No">
+        </div>
+      </div>
+      <div class="form-check">
+        Artritis
+        <div>
+          <label for="yes15">Sí</label>
+          <input type="radio" id="yes15" name="Artitritis" value="Si">
+          <label for="no15">No</label>
+          <input type="radio" id="no15" name="Artitritis" value="No">
+        </div>
+      </div>
+      <div class="form-check">
+        Accidente Cardio Vascular
+        <div>
+          <label for="yes16">Sí</label>
+          <input type="radio" id="yes16" name="ACV" value="Si">
+          <label for="no16">No</label>
+          <input type="radio" id="no16" name="ACV" value="No">
+        </div>
+      </div>
+      <div class="form-group row">
+
+        <textarea name="health-issues" id="" cols="50" rows="5"
+          class="text-muted">Enfermedades y datos que crea relevante aclarar.</textarea>
+      </div>
+    </div>
+
+
+    <div class="send">
+      <input type="submit" value="Enviar" class="btn btn-lg btn-success">
+    </div>
+  </form>
+
+  <!-- footer -->
+
+  <div class="container-fluid">
+    <div class="contact-me">
+      <h2>Cualquier inquietud contactame.</h2>
+      <p>maxfitdo@gmail.com</p>
+    </div>
+  </div>
+
+</body>
