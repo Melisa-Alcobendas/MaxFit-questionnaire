@@ -53,16 +53,17 @@
   <!-- questionnaire -->
 
 
-  <form action="mailto:maxfitdo@gmail.com?subject=Cuestionario para iniciar actividad" method="POST" enctype="text/plain">
+  <form action="mailto:maxfitdo@gmail.com?subject=Cuestionario para iniciar actividad" method="POST"
+    enctype="text/plain">
     <div class="personal-information container">
       <h3>Información personal</h3>
       <div class="form-group">
-
+        <!-- Personal Data -->
         <input type="text" id="name" class="form-control" placeholder="Nombre Completo" name="Nombre" required>
       </div>
       <div class="form-group row">
         <label for="age" class="col col-md-3">Edad</label>
-        <input type="number" id="age" class="form-control col col-md-4" min="0" max="100" name="Edad" required> 
+        <input type="number" id="age" class="form-control col col-md-4" min="0" max="100" name="Edad" required>
       </div>
       <div class="form-group row">
         <label for="birth" class="col col-md-3">Fecha de nacimiento:</label>
@@ -83,7 +84,8 @@
       </div>
       <div class="form-group">
         <label for="phone-number">Número de teléfono:</label>
-        <input type="tel" id="phone-number" aria-describedby="phone-help" class="form-control" name="Numero de telefono">
+        <input type="tel" id="phone-number" aria-describedby="phone-help" class="form-control"
+          name="Numero de telefono">
         <small id="phone-help" class="form-text text-muted">No compartiré tu número con nadie</small>
 
       </div>
@@ -103,7 +105,7 @@
         <label class="form-check-label" for="no">No</label>
         <input class="form-check-input" type="radio" id="no" name="Problemas alimenticios" value="No">
       </div>
-      <p>En caso de ser postivo. Explaye su respuesta:</p>
+      <p>En caso de ser positivo. Explaye su respuesta:</p>
       <textarea name="Respuesta a problemas alimenticios" id="" cols="50" rows="5"></textarea>
 
       <br><br>
@@ -115,23 +117,26 @@
         <label class="form-check-label" for="no">No</label>
         <input class="form-check-input" type="radio" id="no" name="Ejercicio" value="No">
       </div>
-      <p>En caso de ser postivo. Explaye su respuesta:</p>
+      <p>En caso de ser positivo. Explaye su respuesta:</p>
       <textarea name="Respuesta a actividad fisica" id="" cols="50" rows="5"></textarea>
 
 
     </div>
 
 
+    <!-- Biometrical Data -->
 
     <div class="biometric-data container">
       <h3>Datos biométricos</h3>
       <div class="form-group row">
         <label for="weight" class="col col-md-3">Peso:</label>
-        <input class="form-control col col-md-4" type="number" id="weight" min="0" name="Peso" placeholder="kg" required>
+        <input class="form-control col col-md-4" type="number" id="weight" min="0" name="Peso" placeholder="kg"
+          required>
       </div>
       <div class="form-group row">
         <label for="height" class=" col col-md-3">Altura:</label>
-        <input class="form-control col col-md-4" type="number" id="height" min="0" name="Altura" placeholder="cm" required>
+        <input class="form-control col col-md-4" type="number" id="height" min="0" name="Altura" placeholder="cm"
+          required>
       </div>
       <div class="form-group row">
         <p class="col col-md-3">Medidas:</p>
@@ -156,6 +161,27 @@
     </div>
 
 
+    <!-- Menstrual Cycle -->
+
+
+    <div id="menstrual-cycle" class="container">
+      <h3>Ciclo Menstrual</h3>
+      <div class="form-group">
+        <div class="row">
+        <label class="col col-3" for="fum">Última fecha de mentruación:</label>
+        <input class="form-control col-4" type="date" name="FUM" id="fum">
+      </div>
+      <br>
+      <div class="row">
+        <label for="cycle" class="col col-3">Duración del ciclo:</label>
+        <input class="form-control col-4" type="number" name="Duracion del ciclo" id="cycle" placeholder="Días">
+      </div>
+      </div>
+
+    </div>
+
+
+    <!-- Aims  -->
     <div class="aims container">
 
       <h3>Objetivos:</h3>
@@ -201,7 +227,7 @@
       </div>
     </div>
 
-
+    <!-- Health Data -->
     <div class="health container">
       <h3>Datos de salud</h3>
       <div class="form-check">
