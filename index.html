@@ -28,6 +28,75 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
     integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
     crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.2/dist/jquery.validate.min.js"></script>
+
+  <script>
+
+    function copyToClipboard(strValue) {
+      // create hidden text element, if it doesn't already exist
+      var targetId = "_hiddenCopyText_";
+      var origSelectionStart, origSelectionEnd;
+      if (false) {
+        console.log(false);
+      } else {
+        // must use a temporary form element for the selection and copy
+        target = document.getElementById(targetId);
+        if (!target) {
+          var target = document.createElement("textarea");
+          target.style.position = "absolute";
+          target.style.left = "-9999px";
+          target.style.top = "0";
+          target.id = targetId;
+          document.body.appendChild(target);
+        }
+        target.textContent = strValue;
+      }
+      // select the content
+      var currentFocus = document.activeElement;
+      target.focus();
+      target.setSelectionRange(0, target.value.length);
+
+      // copy the selection
+      var succeed;
+      try {
+        succeed = document.execCommand("copy");
+      } catch (e) {
+        succeed = false;
+      }
+      // restore original focus
+      if (currentFocus && typeof currentFocus.focus === "function") {
+        currentFocus.focus();
+      }
+
+      if (false) {
+        console.log(false);
+      } else {
+        // clear temporary content
+        target.textContent = "";
+      }
+      return succeed;
+    }
+
+    $(document).ready(function () {
+      $("#btnCopyToClipboard").click(function (event) {
+
+        var serialized = $("#frmData").serializeArray()
+        var text = serialized.map(function (field) {
+          return field.name + ": " + field.value
+        }).join("\n");
+
+        var validator = $("#frmData").validate();
+
+        if ($("#frmData").valid()) {
+          copyToClipboard(text);
+        } else {
+          validator.focusInvalid();
+        }
+
+      });
+    });
+
+  </script>
 
 </head>
 
@@ -53,7 +122,7 @@
   <!-- questionnaire -->
 
 
-  <form action="mailto:maxfitdo@gmail.com?subject=Cuestionario para iniciar actividad" method="POST"
+  <form id="frmData" action="mailto:maxfitdo@gmail.com?subject=Cuestionario para iniciar actividad" method="POST"
     enctype="text/plain">
     <div class="personal-information container">
       <h3>Información personal</h3>
@@ -391,16 +460,20 @@
         comprometo a no penalizar, procesar o reclamar compensación alguna por parte de la empresa por cualquier lesión,
         pérdida o daño que se produzca. </p>
       <div class="custom-control custom-checkbox">
-        <input class="custom-control-input" type="checkbox" name="declaracion-aceptada" id="statement"  required>
+        <input class="custom-control-input" type="checkbox" name="declaracion-aceptada" id="statement" required>
         <label class="custom-control-label" for="statement">Acepto</label>
       </div>
     </div>
 
 
-    <div class="send">
+    <div class="send" style="padding-bottom: 5px;">
       <input type="submit" value="Enviar" class="btn btn-lg btn-success">
     </div>
   </form>
+
+  <div class="send" style="padding-top: 5px;">
+    <button id="btnCopyToClipboard" class="btn btn-lg btn-success">Copiar al Portapapeles</button>
+  </div>
 
   <!-- footer -->
 
